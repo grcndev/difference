@@ -30,7 +30,7 @@ export default function Sobre() {
               <h1>Acompanhamento &amp; escuta</h1>
               <p className="name"><Ph>{profissional.nome}</Ph>, {profissional.titulo.toLowerCase()}</p>
               <p>
-                {profissional.titulo} formado(a) pela <Ph>{profissional.instituicao}</Ph>, com percurso analítico
+                {profissional.titulo} formado pela <Ph>{profissional.instituicao}</Ph>, com percurso analítico
                 construído junto à esquizoanálise e às filosofias da diferença. Minha prática passa por{' '}
                 <Ph>{profissional.percurso}</Ph>, sempre atenta ao que cada encontro produz.
               </p>

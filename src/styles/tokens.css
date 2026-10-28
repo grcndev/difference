@@ -2,11 +2,6 @@
    Folha cartográfica em branco: grade de 12 colunas em hairlines,
    conteúdo em colunas assimétricas, violeta só no ≠ e no que é interativo. */
 
-/* Escala geral de texto: tudo está em rem, então cresce junto */
-html { font-size: 106.25%; }
-@media (min-width: 1100px) { html { font-size: 112.5%; } }
-@media (min-width: 1900px) { html { font-size: 125%; } }
-
 :root {
   /* Cor */
   --paper: #FAFAFA;          /* fundo primário: folha em branco */
@@ -24,10 +19,10 @@ html { font-size: 106.25%; }
   --sans: "Inter", "Helvetica Neue", Arial, system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 
-  --fs-micro: .8rem;
-  --fs-small: .95rem;
+  --fs-micro: .72rem;
+  --fs-small: .875rem;
   --fs-body: 1.0625rem;
-  --fs-lead: 1.25rem;
+  --fs-lead: 1.1875rem;
   --fs-h3: 1.65rem;
   --fs-h2: clamp(2.1rem, 1.5rem + 2.4vw, 3.2rem);
   /* limitado também pela altura da janela, para o hero caber em qualquer tela */
@@ -39,7 +34,7 @@ html { font-size: 106.25%; }
   --gutter-l: max(16px, env(safe-area-inset-left, 0px));
   --gutter-r: max(16px, env(safe-area-inset-right, 0px));
   --maxw: 1240px;
-  --header-h: 4.5rem;
+  --header-h: 4rem;
   --col-gap: clamp(12px, 2vw, 28px);
   /* espaço vertical entre seções: acompanha largura e altura da janela */
   --section: clamp(3.5rem, min(2rem + 6vw, 13svh), 9rem);

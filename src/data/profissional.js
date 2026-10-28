@@ -5,7 +5,7 @@
 export const profissional = {
   placeholder: true,
   nome: 'Luis Dorvillé',
-  titulo: 'Psicólogo(a)',
+  titulo: 'Psicólogo',
   crp: '15/04515',
   instituicao: 'Cesmac',
   percurso: 'experiências clínicas, institucionais ou comunitárias',
