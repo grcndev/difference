@@ -1,0 +1,8 @@
+.plate-figure { margin: 0; display: flex; flex-direction: column; gap: .9rem; min-width: 0; }
+.plate-frame { border: 1px solid var(--ink); padding: clamp(8px, 1.4vw, 16px); background: var(--paper); }
+.plate-frame .inner { border: 1px solid var(--rule); position: relative; aspect-ratio: 3 / 2; max-width: 100%; }
+.plate-frame canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.plate-figure figcaption {
+  display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  font-family: var(--mono); font-size: var(--fs-micro); color: var(--ink-muted); letter-spacing: .06em;
+}

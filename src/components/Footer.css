@@ -1,0 +1,8 @@
+.site-footer { border-top: 1px solid var(--rule); padding-block: 2rem; background: var(--paper); }
+.site-footer .wrap {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem;
+  font-family: var(--mono); font-size: var(--fs-micro); color: var(--ink-muted); letter-spacing: .06em;
+}
+.site-footer .neq { font-size: 1rem; }
+.site-footer a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.site-footer a:hover { color: var(--ink); }

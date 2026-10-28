@@ -1,0 +1,16 @@
+.closing-in {
+  grid-column: 2 / span 10;
+  display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 5rem); align-items: end;
+}
+.closing-in > h1, .closing-in > h2 { font-size: clamp(2.8rem, min(2rem + 4.5vw, 14svh), 6rem); font-style: italic; font-weight: 400; }
+.closing .act { display: flex; flex-direction: column; gap: 1.6rem; }
+.closing .act p { font-size: var(--fs-lead); }
+.contact-line { display: flex; flex-wrap: wrap; align-items: center; gap: .7rem; font-family: var(--mono); font-size: var(--fs-small); color: var(--ink-muted); }
+.copy {
+  font-family: var(--mono); font-size: var(--fs-micro); letter-spacing: .1em; text-transform: uppercase;
+  background: none; border: 1px solid var(--rule); color: var(--ink-muted);
+  padding: .35em .8em; border-radius: var(--radius); cursor: pointer; transition: color .25s, border-color .25s;
+}
+.copy:hover { color: var(--violet); border-color: var(--violet); }
+@media (max-width: 900px) { .closing-in { grid-column: 1 / -1; grid-template-columns: 1fr; } }

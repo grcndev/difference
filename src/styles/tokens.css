@@ -1,0 +1,63 @@
+/* Design tokens · Acompanhamento Psicológico ≠
+   Folha cartográfica em branco: grade de 12 colunas em hairlines,
+   conteúdo em colunas assimétricas, violeta só no ≠ e no que é interativo. */
+
+/* Escala geral de texto: tudo está em rem, então cresce junto */
+html { font-size: 106.25%; }
+@media (min-width: 1100px) { html { font-size: 112.5%; } }
+@media (min-width: 1900px) { html { font-size: 125%; } }
+
+:root {
+  /* Cor */
+  --paper: #FAFAFA;          /* fundo primário: folha em branco */
+  --paper-2: #F0F2F5;        /* fundo secundário: separação de seções */
+  --ink: #1A1A1A;            /* texto principal, nunca preto puro */
+  --ink-muted: #666666;      /* legendas e metadados */
+  --violet: #5B3B8C;         /* ≠, foco interativo, tags */
+  --violet-soft: rgba(91, 59, 140, .08);
+  --rule: #D1D5DB;           /* linhas estruturais */
+  --rule-blue: #C5D3E8;      /* linhas de fuga do hero */
+  --on-ink: #FAFAFA;
+
+  /* Tipografia */
+  --serif: "Cormorant Garamond", "Cormorant", Garamond, "Times New Roman", serif;
+  --sans: "Inter", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --fs-micro: .8rem;
+  --fs-small: .95rem;
+  --fs-body: 1.0625rem;
+  --fs-lead: 1.25rem;
+  --fs-h3: 1.65rem;
+  --fs-h2: clamp(2.1rem, 1.5rem + 2.4vw, 3.2rem);
+  /* limitado também pela altura da janela, para o hero caber em qualquer tela */
+  --fs-h1: clamp(2.7rem, min(1.6rem + 4.6vw, 11.5svh), 5.4rem);
+  --fs-page: clamp(2.5rem, min(1.6rem + 3.6vw, 9svh), 4.4rem);
+  --fs-question: clamp(2.3rem, min(1.4rem + 4vw, 10svh), 4.6rem);
+
+  /* Espaço e forma */
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+  --maxw: 1240px;
+  --header-h: 4.5rem;
+  --col-gap: clamp(12px, 2vw, 28px);
+  /* espaço vertical entre seções: acompanha largura e altura da janela */
+  --section: clamp(3.5rem, min(2rem + 6vw, 13svh), 9rem);
+  --view-h: calc(100vh - var(--header-h) - 2px);
+  --view-h: calc(100svh - var(--header-h) - 2px);
+  --radius: 2px;
+  --ease: cubic-bezier(.2, .6, .2, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #131316; --paper-2: #1A1B20; --ink: #ECEAF0; --ink-muted: #9A98A3;
+    --violet: #A98BDB; --violet-soft: rgba(169, 139, 219, .1); --rule: #2E2F36;
+    --rule-blue: #2C3647; --on-ink: #131316; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #131316; --paper-2: #1A1B20; --ink: #ECEAF0; --ink-muted: #9A98A3;
+  --violet: #A98BDB; --violet-soft: rgba(169, 139, 219, .1); --rule: #2E2F36;
+  --rule-blue: #2C3647; --on-ink: #131316; color-scheme: dark;
+}

@@ -1,0 +1,5 @@
+.cartogrid { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+.cartogrid .wrap, .cartogrid .grid { height: 100%; }
+.cartogrid span { border-left: 1px solid var(--rule); opacity: .32; }
+.cartogrid span:last-child { border-right: 1px solid var(--rule); }
+@media (max-width: 719px) { .cartogrid span:nth-child(odd) { border-left-color: transparent; } }

@@ -1,0 +1,10 @@
+.who-list { grid-column: 3 / span 9; list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.who-list li { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 1rem; padding-block: 2rem; border-bottom: 1px solid var(--rule); align-items: start; }
+.who-list svg { width: 48px; height: 22px; color: var(--ink-muted); overflow: visible; margin-top: .45rem; transition: color .3s; }
+.who-list li:hover svg { color: var(--violet); }
+.who-list li span { font-family: var(--serif); font-size: clamp(1.35rem, 1.15rem + .7vw, 1.75rem); line-height: 1.4; }
+@media (max-width: 900px) {
+  .who-list { grid-column: 1 / -1; }
+  .who-list li { grid-template-columns: 44px minmax(0, 1fr); }
+  .who-list svg { width: 34px; }
+}
