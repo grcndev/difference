@@ -1,19 +1,60 @@
-.territories { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--col-gap); row-gap: 3rem; }
-.territory { display: flex; flex-direction: column; gap: 1.2rem; padding-top: 1.6rem; border-top: 1px solid var(--ink); min-width: 0; }
-.territory:nth-child(1) { grid-column: 1 / span 5; }
-.territory:nth-child(2) { grid-column: 7 / span 6; margin-top: clamp(0rem, min(-2rem + 10vw, 9svh), 7rem); }
-.territory .tag {
-  align-self: flex-start; font-family: var(--mono); font-size: var(--fs-micro); letter-spacing: .12em; text-transform: uppercase;
-  color: var(--violet); border: 1px solid var(--violet); border-radius: var(--radius); padding: .25em .7em;
+/* Territórios e formatos
+   Dois cards assimétricos sobre a grade de 12 colunas (5 + 6, coluna 6 vazia),
+   alinhados na mesma linha de base — sem deslocamento vertical dependente de
+   viewport. A largura da prancha é fluida e respeita a altura da janela. */
+.territories {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--col-gap);
+  row-gap: clamp(2.5rem, 5vw, 4rem);
 }
-.territory h2 { font-size: clamp(1.8rem, 1.4rem + 1.4vw, 2.5rem); }
-.territory p { max-width: 30em; }
-.territory .scale { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; font-family: var(--mono); font-size: var(--fs-micro); color: var(--ink-muted); letter-spacing: .06em; padding-top: .6rem; }
-.territory .scale i { display: inline-block; height: 7px; border: 1px solid var(--ink-muted); border-top: 0; }
 
-.plate-col { grid-column: 3 / span 9; margin-top: clamp(4rem, 3rem + 4vw, 7rem); min-width: 0; }
+.territory {
+  display: flex; flex-direction: column; gap: 1.2rem;
+  padding-top: 1.6rem; border-top: 1px solid var(--ink);
+  min-width: 0;
+}
+.territory:nth-child(1) { grid-column: 1 / span 5; }
+.territory:nth-child(2) { grid-column: 7 / span 6; }
+
+.territory .tag {
+  align-self: flex-start; font-family: var(--mono); font-size: var(--fs-micro);
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--violet); border: 1px solid var(--violet);
+  border-radius: var(--radius); padding: .25em .7em;
+}
+.territory h2 { font-size: clamp(1.8rem, 1.4rem + 1.4vw, 2.5rem); overflow-wrap: break-word; }
+.territory p { max-width: 30em; overflow-wrap: break-word; }
+
+/* A legenda de escala desce para o pé do card, alinhando os dois quando lado a lado */
+.territory .scale {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .6rem;
+  font-family: var(--mono); font-size: var(--fs-micro); color: var(--ink-muted);
+  letter-spacing: .06em; margin-top: auto; padding-top: .6rem;
+}
+.territory .scale i {
+  display: inline-block; height: 7px; flex: none;
+  border: 1px solid var(--ink-muted); border-top: 0;
+}
+
+/* A prancha fica ancorada na coluna 3, mas nunca mais alta que ~70% da janela:
+   na proporção 3/2, altura = largura × 2/3, então 70svh de altura ⇒ 105svh de largura. */
+.plate-col {
+  grid-column: 3 / span 9;
+  margin-top: clamp(4rem, 3rem + 4vw, 7rem);
+  min-width: 0;
+  max-width: min(100%, 105svh);
+  justify-self: start;
+}
+
+/* Faixa de aperto: antes que as 5 colunas do primeiro card fiquem estreitas
+   demais, os dois cards passam a dividir a grade em metades iguais. */
+@media (max-width: 1100px) {
+  .territory:nth-child(1) { grid-column: 1 / span 6; }
+  .plate-col { grid-column: 2 / span 11; }
+}
 
 @media (max-width: 900px) {
-  .territory:nth-child(1), .territory:nth-child(2) { grid-column: 1 / -1; margin-top: 0; }
+  .territory:nth-child(1), .territory:nth-child(2) { grid-column: 1 / -1; }
   .plate-col { grid-column: 1 / -1; }
 }

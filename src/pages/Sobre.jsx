@@ -22,7 +22,7 @@ export default function Sobre() {
                   alt={`Retrato de ${profissional.nome}, em três tomadas sobrepostas a uma colagem em preto e branco de olhos, boca e edifícios.`}
                 />
               </div>
-              <figcaption><Ph>{profissional.nome}</Ph> · CRP <Ph>{profissional.crp}</Ph></figcaption>
+              {/* <figcaption><Ph>{profissional.nome}</Ph> · CRP <Ph>{profissional.crp}</Ph></figcaption> */}
             </figure>
 
             <div className="about-text">
@@ -30,7 +30,7 @@ export default function Sobre() {
               <h1>Acompanhamento &amp; escuta</h1>
               <p className="name"><Ph>{profissional.nome}</Ph>, {profissional.titulo.toLowerCase()}</p>
               <p>
-                {profissional.titulo} formado pela <Ph>{profissional.instituicao}</Ph>, com percurso analítico
+                {profissional.titulo} formado pelo <Ph>{profissional.instituicao}</Ph>, com percurso analítico
                 construído junto à esquizoanálise e às filosofias da diferença. Minha prática passa por{' '}
                 <Ph>{profissional.percurso}</Ph>, sempre atenta ao que cada encontro produz.
               </p>
